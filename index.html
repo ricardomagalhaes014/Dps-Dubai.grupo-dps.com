@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Investir em Dubai – Mercado Imobiliário e Samana Developers</title>
+  <style>
+    /* Base styles */
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: Arial, Helvetica, sans-serif; line-height: 1.6; color: #333; }
+    h1, h2, h3 { margin-top: 0; }
+    a { color: #0e427a; }
+    /* Hero section */
+    header {
+      position: relative;
+      height: 70vh;
+      background-image: url('hero.jpg');
+      background-size: cover;
+      background-position: center;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    header::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+    header .content {
+      position: relative;
+      z-index: 1;
+    }
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+    }
+    header p {
+      font-size: 1.25rem;
+    }
+    /* Sticky navigation bar */
+    nav {
+      background-color: #0e427a;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      padding: 0.75rem 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    nav a {
+      color: #fff;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: bold;
+      transition: opacity 0.2s ease;
+    }
+    nav a:hover {
+      opacity: 0.75;
+    }
+    /* Sections */
+    section {
+      padding: 3rem 15%;
+    }
+    section:nth-child(even) {
+      background-color: #f7f9fc;
+    }
+    section h2 {
+      color: #0e427a;
+      margin-bottom: 1rem;
+    }
+    .two-column {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      align-items: center;
+    }
+    .two-column img {
+      flex: 1 1 400px;
+      max-width: 100%;
+      border-radius: 8px;
+    }
+    .two-column .text {
+      flex: 1 1 400px;
+    }
+    .project-cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .card {
+      flex: 1 1 250px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      padding: 1.5rem;
+    }
+    .card h3 {
+      color: #0e427a;
+      margin-top: 0;
+    }
+    .card p {
+      font-size: 0.9rem;
+    }
+
+    /* Logo */
+    .logo {
+      height: 40px;
+      margin-right: 1rem;
+    }
+
+    .nav-links {
+      flex-grow: 1;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .translate {
+      margin-left: auto;
+    }
+
+    /* Social share buttons */
+    .social-share {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1.5rem;
+    }
+    .social-share a {
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      line-height: 40px;
+      border-radius: 50%;
+      color: #fff;
+      font-weight: bold;
+      font-size: 1.2rem;
+      text-align: center;
+      text-decoration: none;
+    }
+    .social-share .facebook { background: #3b5998; }
+    .social-share .linkedin { background: #0077b5; }
+    .social-share .instagram { background: #e4405f; }
+    .social-share .tiktok { background: #000000; }
+    .social-share .whatsapp { background: #25D366; }
+    /* Contact bar */
+    .contact-bar {
+      position: fixed;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+      background-color: #25D366;
+      padding: 1rem;
+      border-radius: 8px 0 0 8px;
+      z-index: 100;
+    }
+    .contact-bar a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      display: block;
+      white-space: nowrap;
+    }
+    footer {
+      background-color: #0e427a;
+      color: #fff;
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+    }
+    @media (max-width: 768px) {
+      header h1 { font-size: 2rem; }
+      header p { font-size: 1rem; }
+      section { padding: 2rem 5%; }
+    }
+  </style>
+</head>
+<body>
+  <!-- WhatsApp contact bar -->
+  <div class="contact-bar">
+    <a href="https://wa.me/925708456" target="_blank">Contacte-nos pelo WhatsApp</a>
+  </div>
+
+  <!-- Hero section -->
+  <header>
+    <div class="content">
+      <h1>Investir em Dubai</h1>
+      <p>Descubra as oportunidades do mercado imobiliário de Dubai e o diferencial dos projectos da Samana Developers</p>
+    </div>
+  </header>
+
+  <!-- Navigation -->
+  <nav>
+    <img src="logo.png" alt="Logo DPS Imobiliário" class="logo">
+    <div class="nav-links">
+      <a href="#mercado">Mercado</a>
+      <a href="#dados">Dados &amp; Tendências</a>
+      <a href="#projecoes">Projecções Futuras</a>
+      <a href="#samana">Samana</a>
+      <a href="#projectos">Projectos</a>
+      <a href="#empreendimentos">Empreendimentos</a>
+      <a href="#vantagens">Vantagens</a>
+      <a href="#noticias">Notícias</a>
+    </div>
+    <div id="google_translate_element" class="translate"></div>
+  </nav>
+
+  <!-- Visão geral do mercado -->
+  <section id="mercado">
+    <h2>Visão Geral do Mercado de Dubai</h2>
+    <p>Dubai transformou-se num dos mercados imobiliários mais dinâmicos do mundo. Após uma correcção entre 2015 e 2020, o mercado recuperou com vigor graças a reformas de vistos, investimentos estrangeiros e políticas favoráveis. O preço médio de venda por pé quadrado subiu de cerca de <strong>AED 1 003 em 2014 para AED 1 524 em 2024</strong>, uma valorização de 51,9 %, e superou AED 1 850 em 2025. O número de transacções cresceu de <strong>41 715 em 2014 para mais de 132 000 em 2023</strong>, evidenciando forte procura internacional. As contas <em>escrow</em>, exigidas por lei desde 2007, protegem investidores ao garantir que os pagamentos de imóveis na planta são libertados apenas quando marcos de construção são cumpridos.</p>
+  </section>
+
+  <!-- Dados & Tendências -->
+  <section id="dados">
+    <h2>Dados &amp; Tendências</h2>
+    <div class="two-column">
+      <div class="text">
+        <ul>
+          <li>Preços de venda residenciais subiram <strong>80 % desde 2015</strong>, enquanto as rendas cresceram cerca de 45 %; hoje o valor médio ronda <strong>AED 1 650 / pé quadrado</strong> graças a uma procura resiliente【586456342398232†L61-L66】.</li>
+          <li>Em 2025 foram registadas <strong>mais de 214 912 transacções</strong> totalizando cerca de <strong>AED 682 biliões em vendas</strong> (aproximadamente AED 916 biliões incluindo hipotecas); o número de habitantes ultrapassou <strong>4 milhões</strong> com 208 000 novos residentes【39295456275557†L61-L90】.</li>
+          <li>A primeira metade de 2025 somou <strong>98 700 transacções no valor de AED 327 biliões</strong>; vilas em comunidades de média gama subiram 13–25 % e os preços médios de apartamentos cresceram 8 %【586456342398232†L61-L72】【586456342398232†L94-L97】.</li>
+          <li>O valor das transacções de terrenos disparou <strong>403,6 % entre 2019 e 2024</strong>, passando de AED 13,7 B para AED 68,8 B; as transacções de terrenos quase triplicaram e a população de Dubai cresceu de 2,3 M em 2014 para mais de 4 M em 2025, com projecção de 5,8 M até 2040【596607106114503†L29-L53】.</li>
+          <li>O ritmo semanal no início de 2026 ultrapassa <strong>5 000 negócios</strong> e o preço médio de venda atinge <strong>AED 1 692 / pé quadrado</strong>; cerca de 65 % das vendas são off‑plan, reflectindo forte especulação【448161024534673†L26-L60】【448161024534673†L69-L88】.</li>
+          <li>As rendas oferecem <strong>yields de 6–10 %</strong> e espera-se crescimento moderado (~6 %) em 2026, com previsão de entrega de 120 000 novas unidades【586456342398232†L111-L146】.</li>
+          <li>A economia de Dubai cresceu <strong>3,2 % em 2024</strong> e <strong>4,7 % nos primeiros nove meses de 2025</strong>, com o sector imobiliário contribuindo com 8,2 % do PIB, e reformas de vistos e infra‑estruturas a impulsionarem a confiança de investidores.</li>
+          <li>As contas <em>escrow</em> são obrigatórias em vendas fora de planta, garantindo transparência e segurança para compradores.</li>
+        </ul>
+      </div>
+      <img src="growth.jpg" alt="Gráfico de crescimento económico e imobiliário">
+    </div>
+  </section>
+
+  <!-- Projecções Futuras -->
+  <section id="projecoes">
+    <h2>Projecções Futuras</h2>
+    <p>Os analistas preveem que em 2026 o ritmo de crescimento desacelerará para 1–3 %, devido à entrega de até 250 000 novas unidades. No entanto, os segmentos de luxo e as localizações <em>prime</em> continuam resilientes. Até 2030, prevê-se que a população de Dubai ultrapasse cinco milhões de habitantes e que o governo alcance a meta de AED 1 trilião em transacções anuais. As reformas de vistos, iniciativas de sustentabilidade e mega‑projectos de infra‑estrutura como o aeroporto Al Maktoum sustentam uma trajectória de crescimento a médio e longo prazo.</p>
+  </section>
+
+  <!-- Samana Developers -->
+  <section id="samana">
+    <h2>Samana Developers</h2>
+    <div class="two-column">
+      <img src="samana.jpg" alt="Projecto residencial com piscina privada">
+      <div class="text">
+        <p><strong>Samana Developers</strong> é um promotor boutique fundado em 2017 e parte do conglomerado Samana Group. A empresa ganhou notoriedade ao introduzir piscinas privadas em todas as unidades e amenities de estilo resort. Com mais de 30 projectos lançados e quatro entregues, a Samana tornou-se o quinto maior vendedor de off‑plan em Dubai.</p>
+        <p><strong>Desempenho financeiro:</strong> A empresa registou crescimento de 600 % nas vendas em 2023, com 1 630 transacções no valor de AED 1,59 bilião. Em 2025 alcançou vendas recorde de <strong>AED 7,1 biliões</strong> e lançou 16 novos projectos, consolidando 5.º lugar no ranking de promotores. Cerca de 86 % das vendas provêm de investidores estrangeiros.</p>
+        <p><strong>Diferenciais:</strong> Piscinas privadas, design de resort, programas de retorno garantido (até 8 %), sustentabilidade (edifícios resistentes ao calor, reciclagem de água) e verticalização (divisões próprias de engenharia e construção) são marcas da Samana. Preços de entrada competitivos a partir de AED 599 mil e planos de pagamento flexíveis ampliam o acesso a compradores jovens.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Principais projectos -->
+  <section id="projectos">
+    <h2>Principais Projectos</h2>
+    <div class="project-cards">
+      <div class="card">
+        <h3>Samana Greens</h3>
+        <p>Primeiro projecto da empresa (Arjan, lançado em 2018). Estrutura concluída em apenas oito meses, estabelecendo reputação de entrega pontual.</p>
+      </div>
+      <div class="card">
+        <h3>Samana Hills</h3>
+        <p>Empreendimento de estilo resort (Arjan, lançado em 2019 e entregue em 2022) com piscinas privadas em todas as unidades e múltiplas comodidades.</p>
+      </div>
+      <div class="card">
+        <h3>Samana Hills South 2</h3>
+        <p>Localizado em Dubai South, este projecto acessível (a partir de AED 599 mil) vendeu todas as unidades em 90 minutos. Oferece retorno garantido de 8 %.</p>
+      </div>
+      <div class="card">
+        <h3>Samana Ocean Views</h3>
+        <p>Lançado em 2024, em parceria com o estilista Elie Saab, com apartamentos de 1–3 quartos e piscina privada, localizado próximo à Marina de Dubai.</p>
+      </div>
+      <div class="card">
+        <h3>Park Views &amp; Ivy Gardens 2</h3>
+        <p>Projectos em Arjan e Dubailand com foco em sustentabilidade, varandas verdes e design resistente ao clima. Incluem reciclagem de água e energias eficientes.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Empreendimentos em Destaque -->
+  <section id="empreendimentos">
+    <h2>Empreendimentos em Destaque</h2>
+    <!-- Samana Barari Heights -->
+    <div class="two-column" style="margin-bottom:2rem;">
+      <img src="barari.jpg" alt="Samana Barari Heights em Majan, Dubailand">
+      <div class="text">
+        <h3>Samana Barari Heights</h3>
+        <p>Localizado em Majan (Dubailand), este arranha‑céu de 360° combina design contemporâneo com sustentabilidade. As unidades incluem <strong>estúdios com piscina, apartamentos de 1 e 2 quartos e sky villas de 3‑4 quartos</strong>, muitas com piscinas privadas.</p>
+        <ul>
+          <li>Arquitectura panorâmica com vistas para o horizonte de Dubai e para a comunidade verde de Al Barari.</li>
+          <li>Amenidades de bem‑estar: piscina infinita elevada, aqua gym, áreas de ioga e meditação, spa interior com jacuzzis.</li>
+          <li>Infra‑estrutura familiar com piscinas infantis, áreas de brincar e creche.</li>
+          <li>Zonas sociais como cinema ao ar livre, áreas de churrasco, lounge de charutos, jardins com redes e pátios afundados.</li>
+          <li><strong>Plano de pagamento:</strong> 20 % de entrada, 56 % durante a construção, 1 % na entrega e 23 % pós‑entrega em 46 meses.</li>
+          <li><strong>Conectividade:</strong> 20 min ao Burj Khalifa/Downtown, 17 min ao Dubai Hills Mall, 11 min ao Global Village e 25 min ao Aeroporto Internacional de Dubai.</li>
+        </ul>
+      </div>
+    </div>
+    <!-- Samana Hills South 3 -->
+    <div class="two-column" style="margin-bottom:2rem;">
+      <img src="hills_south3.jpg" alt="Samana Hills South 3 em Dubai South">
+      <div class="text">
+        <h3>Samana Hills South 3</h3>
+        <p>Este projecto no Dubai South é um santuário de estilo resort composto por <strong>147 unidades</strong> (estúdios, apartamentos de 1 e 2 quartos) distribuídas por 95 195 m². Com preços desde <strong>Dh 639 000</strong>, combina conforto, qualidade e acessibilidade para jovens famílias, profissionais e investidores.</p>
+        <ul>
+          <li>Sucesso de vendas: os lançamentos South 1 & 2 esgotaram rapidamente; a fase 3 mantém a posição da Samana como principal vendedora off‑plan.</li>
+          <li>Amenidades: mais de 30 instalações incluindo aqua gym, spa, lounge de bem‑estar, grande piscina, cinema ao ar livre e outras facilidades que elevam o potencial de arrendamento.</li>
+          <li><strong>Entrega prevista:</strong> Outubro de 2028, proporcionando um horizonte claro para valorização de capital.</li>
+          <li><strong>Localização estratégica:</strong> proximidade ao Aeroporto Al Maktoum e às zonas de negócios do Dubai South; acesso fácil à Sheikh Mohammed Bin Zayed Road; 18 min ao aeroporto e 20 min à Dubai Marina.</li>
+          <li><strong>Plano de pagamento:</strong> 20 % de entrada, 10 % no 12.º mês e o restante 1 % por mês durante o período de construção; estrutura flexível que se estende além da entrega.</li>
+        </ul>
+      </div>
+    </div>
+    <!-- Samana Boulevard Heights -->
+    <div class="two-column">
+      <img src="boulevard.jpg" alt="Samana Boulevard Heights em Dubailand">
+      <div class="text">
+        <h3>Samana Boulevard Heights</h3>
+        <p>Situado em Dubailand, este complexo reinterpreta a vida urbana ao unir elegância metropolitana e conforto de resort. Oferece desde estúdios até apartamentos de 3 quartos com varandas espaçosas, acabamentos premium e sistemas inteligentes.</p>
+        <ul>
+          <li><strong>Localização e conectividade:</strong> acesso rápido a Downtown Dubai, Business Bay e Dubai Marina; ligação directa às estradas Sheikh Mohammed Bin Zayed Road e Al Ain Road, próxima de parques temáticos, centros comerciais e campos de golfe.</li>
+          <li>Amenidades: piscina infinita com spa, sauna e jacuzzi; ginásio topo de gama; mini‑golfe, bowling, ténis de mesa; cinema, salões, zonas de churrasco, lojas e restaurantes.</li>
+          <li>Opções residenciais: layouts abertos, tetos altos, varandas privadas e materiais nobres; unidades equipadas com sistemas inteligentes e design sofisticado.</li>
+          <li><strong>Potencial de investimento:</strong> preços a partir de AED 693 000 e planos de pagamento flexíveis (10 % de entrada, 5 % no 1.º mês, prestações de 1 % por mês, com parcelas diferenciadas para clientes locais e internacionais).</li>
+          <li><strong>Handover:</strong> previsto para o primeiro trimestre de 2029, oferecendo horizonte longo para rentabilidade.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Vantagens de Comprar Connosco -->
+  <section id="vantagens">
+    <h2>Por que Comprar connosco?</h2>
+    <p>A DPS Imobiliário faz parte do Grupo DPS e apresenta-se como muito mais do que uma imobiliária: é uma plataforma estratégica orientada para investimento. A empresa transforma a intermediação imobiliária tradicional em um modelo focado em previsibilidade de resultados e vendas estruturadas. Em vez de vender casas, vende ativos imobiliários com estratégia financeira associada.</p>
+    <ul>
+      <li><strong>Foco em investidores:</strong> trabalhamos exclusivamente com lógica de rentabilidade, valorização e saída estratégica.</li>
+      <li><strong>Entrada abaixo do mercado:</strong> identificamos projectos em fase inicial com condições diferenciadas e margem real.</li>
+      <li><strong>Visão internacional:</strong> ponte estruturada entre Europa, Brasil e Médio Oriente para investidores globais.</li>
+      <li><strong>Acompanhamento completo:</strong> apoio jurídico, análise documental e estratégia de cedência de posição durante todo o ciclo de investimento.</li>
+      <li><strong>Especialistas em captação de leads:</strong> integrados ao Grupo DPS, dispomos de equipas de marketing digital e captação de investidores que utilizam automação, inteligência de dados e CRM para maximizar a visibilidade dos projectos. Isso ajuda quem compra connosco a revender posteriormente, dado o alcance do nosso sistema.</li>
+      <li><strong>Sistemas modernos e dedicados:</strong> a empresa DPS Media, parte do grupo, conecta marketing, tecnologia e processos de vendas, oferecendo soluções completas de performance para captar interessados e investidores.</li>
+    </ul>
+    <p>Estas vantagens permitem que os nossos clientes entrem nos projectos na fase certa, pagando menos e ganhando mais, com a segurança de um acompanhamento profissional e a alavancagem de uma rede global de potenciais compradores.</p>
+
+    <!-- Social share buttons -->
+    <div class="social-share">
+      <a href="#" class="facebook" title="Partilhar no Facebook">F</a>
+      <a href="#" class="linkedin" title="Partilhar no LinkedIn">in</a>
+      <a href="#" class="instagram" title="Partilhar no Instagram">IG</a>
+      <a href="#" class="tiktok" title="Partilhar no TikTok">T</a>
+      <a href="https://wa.me/?text=Investir%20em%20Dubai%20-%20Mercado%20Imobiliario" class="whatsapp" title="Partilhar no WhatsApp">WA</a>
+    </div>
+  </section>
+
+  <!-- Notícias do Mercado -->
+  <section id="noticias">
+    <h2>Notícias do Mercado</h2>
+    <p>Acompanhe as últimas notícias e análises que reforçam a dinâmica do mercado imobiliário de Dubai. Estes artigos explicam porque o emirado continua a atrair investidores de todo o mundo.</p>
+    <ul>
+      <li><a href="https://www.geo.tv/latest/123456-dubai-real-estate-first-working-day-2026" target="_blank">Geo TV – Mercado imobiliário transacciona AED 771 M no primeiro dia útil de 2026</a> – reporta que 2025 foi um ano recorde com vendas de AED 682 biliões e 214 912 transacções; a população de Dubai ultrapassou 4 milhões com 208 000 novos residentes【39295456275557†L61-L90】【39295456275557†L76-L85】.</li>
+      <li><a href="https://serendibrealty.com/blog/current-dubai-housing-market-trends-2026" target="_blank">Serendib Realty – Tendências do mercado imobiliário de Dubai 2026</a> – analisa que o preço médio ronda AED 1 650 / pé quadrado (↑8 %), vilas sobem 13–25 % e o primeiro semestre de 2025 registou 98 700 transacções no valor de AED 327 biliões【586456342398232†L61-L72】【586456342398232†L94-L97】; a oferta de 73 000 casas em 2025 e 120 000 previstas para 2026 mantém a ocupação elevada【586456342398232†L111-L124】.</li>
+      <li><a href="https://throneproperties.ae/blog/dubai-land-market-soars-403-as-strategic-planning-reshapes-urban-growth" target="_blank">Throne Properties – Mercado de terrenos de Dubai cresce 403 %</a> – destaca a análise da JLL mostrando que o valor dos terrenos subiu de AED 13,7 B para AED 68,8 B (2019‑2024) e os volumes quase triplicaram【596607106114503†L29-L36】; a expansão demográfica, os 39 mil milhões de investimento em infra‑estrutura e o domínio das zonas <em>freehold</em> impulsionam o mercado【596607106114503†L50-L58】.</li>
+      <li><a href="https://www.stevenleckie.com/pulse" target="_blank">Market Pulse – Inteligência diária do mercado</a> – relata que o mercado registou mais de 5 000 transacções por semana no início de 2026 e um preço médio de AED 1 692 / pé quadrado【448161024534673†L26-L60】; 65 % das vendas são off‑plan e a população de 4 M sustenta um ritmo anual de 265 000 negócios【448161024534673†L69-L88】【448161024534673†L126-L149】.</li>
+      <li><a href="https://armayraestates.com/project/samana-barari-heights" target="_blank">Armayra Estates – Lançamento do Samana Barari Heights</a> – apresenta o novo arranha‑céu de 360° em Majan, Dubailand, com piscinas privadas, infinity pool e cinema ao ar livre, exemplificando a tendência de projectos resort em Dubai【103373912044735†L170-L188】.</li>
+    </ul>
+  </section>
+
+  <footer>
+    <img src="logo.png" alt="Logotipo DPS Imobiliário" style="height:40px; margin-bottom:0.5rem;">
+    <p>Este site foi criado para fins informativos e apresenta dados públicos sobre o mercado imobiliário de Dubai e o promotor Samana Developers.</p>
+    <p>Para mais informações ou assistência, entre em contacto connosco pelo WhatsApp.</p>
+  </footer>
+
+  <!-- Google Translate widget script -->
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'pt',
+        includedLanguages: 'en,pt,ar',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+      }, 'google_translate_element');
+    }
+  </script>
+  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+</html>
