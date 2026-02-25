@@ -159,18 +159,72 @@
       top: 50%;
       right: 0;
       transform: translateY(-50%);
-      background-color: #25D366;
-      padding: 1rem;
-      border-radius: 8px 0 0 8px;
       z-index: 100;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      border-radius: 10px 0 0 10px;
+      overflow: hidden;
+      box-shadow: -4px 0 20px rgba(0,0,0,0.25);
     }
     .contact-bar a {
       color: #fff;
       text-decoration: none;
       font-weight: bold;
-      display: block;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
       white-space: nowrap;
+      overflow: hidden;
+      transition: width 0.25s ease, background 0.2s;
+      font-size: 0.75rem;
     }
+    .contact-bar a:hover {
+      width: 160px;
+      justify-content: flex-start;
+      padding-left: 12px;
+      gap: 8px;
+    }
+    .contact-bar a span.label {
+      display: none;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+    .contact-bar a:hover span.label { display: inline; }
+    .contact-bar .cb-wa   { background: linear-gradient(135deg,#25D366,#128C7E); }
+    .contact-bar .cb-sim  { background: linear-gradient(135deg,#D4AF37,#b8932a); }
+    .contact-bar .cb-ig   { background: linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888); }
+    .contact-bar .cb-fb   { background: #1877F2; }
+    .contact-bar .cb-li   { background: #0A66C2; }
+
+    /* Simulator CTA button below each development */
+    .sim-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 1.25rem;
+      padding: 0.65rem 1.4rem;
+      background: linear-gradient(135deg, #D4AF37, #b8932a);
+      color: #0d1117;
+      font-weight: 800;
+      font-size: 0.88rem;
+      letter-spacing: 0.04em;
+      border-radius: 6px;
+      text-decoration: none;
+      box-shadow: 0 4px 14px rgba(212,175,55,0.35);
+      transition: transform 0.18s, box-shadow 0.18s;
+      border: none;
+      cursor: pointer;
+    }
+    .sim-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(212,175,55,0.5);
+      color: #0d1117;
+    }
+    .sim-cta svg { flex-shrink: 0; }
     footer {
       background-color: #0e427a;
       color: #fff;
@@ -186,9 +240,33 @@
   </style>
 </head>
 <body>
-  <!-- WhatsApp contact bar -->
+  <!-- Floating side bar: WhatsApp, Simulator, Instagram, Facebook, LinkedIn -->
   <div class="contact-bar">
-    <a href="https://wa.me/925708456" target="_blank">Contacte-nos pelo WhatsApp</a>
+    <!-- WhatsApp -->
+    <a href="https://wa.me/351925708456" target="_blank" class="cb-wa" title="Fale Connosco">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      <span class="label">Fale Connosco</span>
+    </a>
+    <!-- Simulator -->
+    <a href="https://dubai-simulator.manus.space" target="_blank" class="cb-sim" title="Simule e Saiba Já">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0d1117" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/><polyline points="7 10 10 13 13 10 17 7"/></svg>
+      <span class="label" style="color:#0d1117">Simule Agora</span>
+    </a>
+    <!-- Instagram -->
+    <a href="https://www.instagram.com/" target="_blank" class="cb-ig" title="Instagram">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.5"/><circle cx="17.5" cy="6.5" r="1" fill="white" stroke="none"/></svg>
+      <span class="label">Instagram</span>
+    </a>
+    <!-- Facebook -->
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdps-dubai.grupo-dps.com" target="_blank" class="cb-fb" title="Facebook">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+      <span class="label">Facebook</span>
+    </a>
+    <!-- LinkedIn -->
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fdps-dubai.grupo-dps.com" target="_blank" class="cb-li" title="LinkedIn">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      <span class="label">LinkedIn</span>
+    </a>
   </div>
 
   <!-- Hero section -->
@@ -302,11 +380,15 @@
           <li>Infra‑estrutura familiar com piscinas infantis, áreas de brincar e creche.</li>
           <li>Zonas sociais como cinema ao ar livre, áreas de churrasco, lounge de charutos, jardins com redes e pátios afundados.</li>
           <li><strong>Plano de pagamento:</strong> 20 % de entrada, 56 % durante a construção, 1 % na entrega e 23 % pós‑entrega em 46 meses.</li>
-          <li><strong>Conectividade:</strong> 20 min ao Burj Khalifa/Downtown, 17 min ao Dubai Hills Mall, 11 min ao Global Village e 25 min ao Aeroporto Internacional de Dubai.</li>
-        </ul>
+          <p><strong>Conectividade:</strong> 20 min ao Burj Khalifa/Downtown, 17 min ao Dubai Hills Mall, 11 min ao Global Village e 25 min ao Aeroporto Internacional de Dubai.</p>
+          </ul>
+        <a href="https://dubai-simulator.manus.space" target="_blank" class="sim-cta">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="7 10 10 13 13 10 17 7"/><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="12" y1="17" x2="12" y2="21"/><line x1="8" y1="21" x2="16" y2="21"/></svg>
+          Simule e Saiba Já — Barari Heights
+        </a>
       </div>
     </div>
-    <!-- Samana Hills South 3 -->
+    <!-- Samana Hills South 3 -->
     <div class="two-column" style="margin-bottom:2rem;">
       <img src="hills_south3.jpg" alt="Samana Hills South 3 em Dubai South">
       <div class="text">
@@ -316,9 +398,13 @@
           <li>Sucesso de vendas: os lançamentos South 1 & 2 esgotaram rapidamente; a fase 3 mantém a posição da Samana como principal vendedora off‑plan.</li>
           <li>Amenidades: mais de 30 instalações incluindo aqua gym, spa, lounge de bem‑estar, grande piscina, cinema ao ar livre e outras facilidades que elevam o potencial de arrendamento.</li>
           <li><strong>Entrega prevista:</strong> Outubro de 2028, proporcionando um horizonte claro para valorização de capital.</li>
-          <li><strong>Localização estratégica:</strong> proximidade ao Aeroporto Al Maktoum e às zonas de negócios do Dubai South; acesso fácil à Sheikh Mohammed Bin Zayed Road; 18 min ao aeroporto e 20 min à Dubai Marina.</li>
-          <li><strong>Plano de pagamento:</strong> 20 % de entrada, 10 % no 12.º mês e o restante 1 % por mês durante o período de construção; estrutura flexível que se estende além da entrega.</li>
+          <li><strong>Localização estratégica:</strong> proximidade ao Aeroporto Al Maktoum e às zonas de negócios do Dubai South; acesso fácil à Sheikh Mohammed Bin Zayed Road; 18 min ao aeroporto e 20 min à Dubai Marina.</li>
+          <li><strong>Plano de pagamento:</strong> 20 % de entrada, 10 % no 12.º mês e o restante 1 % por mês durante o período de construção; estrutura flexível que se estende além da entrega.</li>
         </ul>
+        <a href="https://dubai-simulator.manus.space" target="_blank" class="sim-cta">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="7 10 10 13 13 10 17 7"/><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="12" y1="17" x2="12" y2="21"/><line x1="8" y1="21" x2="16" y2="21"/></svg>
+          Simule e Saiba Já — Hills South 3
+        </a>
       </div>
     </div>
     <!-- Samana Boulevard Heights -->
@@ -334,6 +420,10 @@
           <li><strong>Potencial de investimento:</strong> preços a partir de AED 693 000 e planos de pagamento flexíveis (10 % de entrada, 5 % no 1.º mês, prestações de 1 % por mês, com parcelas diferenciadas para clientes locais e internacionais).</li>
           <li><strong>Handover:</strong> previsto para o primeiro trimestre de 2029, oferecendo horizonte longo para rentabilidade.</li>
         </ul>
+        <a href="https://dubai-simulator.manus.space" target="_blank" class="sim-cta">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="7 10 10 13 13 10 17 7"/><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="12" y1="17" x2="12" y2="21"/><line x1="8" y1="21" x2="16" y2="21"/></svg>
+          Simule e Saiba Já — Boulevard Heights
+        </a>
       </div>
     </div>
   </section>
