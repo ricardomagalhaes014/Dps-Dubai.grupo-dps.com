@@ -182,8 +182,39 @@
     .simulator-header { background: linear-gradient(135deg, rgba(201,168,76,0.07), rgba(201,168,76,0.02)); border-bottom: 1px solid var(--gold-line); padding: 1.8rem 2.2rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
     .simulator-header h3 { font-family: var(--font-display); font-size: 1.7rem; font-weight: 600; color: var(--white); }
     .simulator-header p { font-size: 0.8rem; color: var(--white-dim); margin-top: 0.2rem; }
-    .simulator-frame { width: 100%; height: 900px; border: none; display: block; }
-    @media(max-width:768px){.simulator-frame{height:1400px}}
+    /* ===== SIMULADOR EMBUTIDO ===== */
+    .sim-body { padding: 2rem 2.2rem 2.5rem; }
+    .sim-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    @media(max-width:900px){ .sim-grid { grid-template-columns: 1fr; } }
+    .sim-col { display: flex; flex-direction: column; gap: 1.2rem; }
+    .sim-field { display: flex; flex-direction: column; gap: 0.4rem; }
+    .sim-label { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); }
+    .sim-select, .sim-input { background: var(--navy); border: 1px solid var(--gold-line); color: var(--white); font-family: var(--font-ui); font-size: 0.82rem; padding: 0.7rem 0.9rem; width: 100%; appearance: none; -webkit-appearance: none; outline: none; transition: border-color 0.2s; }
+    .sim-select:focus, .sim-input:focus { border-color: var(--gold); }
+    .sim-select option { background: #111827; color: #fff; }
+    .sim-range-wrap { display: flex; align-items: center; gap: 0.8rem; }
+    .sim-range { flex: 1; accent-color: var(--gold); }
+    .sim-range-val { min-width: 3.5rem; text-align: right; font-size: 0.82rem; color: var(--gold); font-weight: 700; }
+    .sim-unit-info { background: rgba(201,168,76,0.06); border: 1px solid var(--gold-line); padding: 1rem 1.2rem; font-size: 0.78rem; color: var(--white-dim); display: none; }
+    .sim-unit-info.visible { display: block; }
+    .sim-unit-info strong { color: var(--gold); }
+    .sim-results { margin-top: 1.5rem; background: var(--navy); border: 1px solid var(--gold-line); padding: 1.5rem 1.8rem; display: none; }
+    .sim-results.visible { display: block; }
+    .sim-results-title { font-family: var(--font-display); font-size: 1.1rem; color: var(--gold); margin-bottom: 1.2rem; }
+    .sim-results-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+    @media(max-width:700px){ .sim-results-grid { grid-template-columns: 1fr 1fr; } }
+    @media(max-width:480px){ .sim-results-grid { grid-template-columns: 1fr; } }
+    .sim-res-card { background: var(--navy-card); padding: 1rem; text-align: center; }
+    .sim-res-label { font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--white-dim); margin-bottom: 0.3rem; }
+    .sim-res-value { font-size: 1.15rem; font-weight: 700; color: var(--white); }
+    .sim-res-value.gold { color: var(--gold); }
+    .sim-res-value.green { color: #4ade80; }
+    .sim-plan-desc { font-size: 0.72rem; color: var(--white-dim); margin-top: 0.3rem; line-height: 1.5; }
+    .sim-btn { background: linear-gradient(135deg, var(--gold-dark), var(--gold)); color: var(--navy); font-family: var(--font-ui); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; padding: 0.85rem 2rem; border: none; cursor: pointer; transition: all 0.3s; width: 100%; margin-top: 0.5rem; }
+    .sim-btn:hover { opacity: 0.9; transform: translateY(-1px); }
+    .sim-whatsapp { display: flex; align-items: center; justify-content: center; gap: 0.6rem; background: #25D366; color: #fff; font-family: var(--font-ui); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.85rem 2rem; border: none; cursor: pointer; transition: all 0.3s; width: 100%; margin-top: 0.8rem; text-decoration: none; }
+    .sim-whatsapp:hover { background: #1ebe5d; }
+    .sim-disclaimer { font-size: 0.62rem; color: var(--white-dim); margin-top: 1rem; opacity: 0.7; }
 
     /* VANTAGENS */
     .vantagens-section { background: var(--navy-light); }
@@ -537,14 +568,82 @@
         <div class="simulator-header">
           <div>
             <h3>Simule o Seu Investimento em Dubai</h3>
-            <p>Resultados em tempo real · 5 planos de pagamento · Valorização anual configurável</p>
+            <p>18 empreendimentos · 4 planos de pagamento · Valorização anual configurável</p>
           </div>
-          <a href="https://dpsdubai.grupo-dps.com" target="_blank" class="btn-gold" style="font-size:0.62rem;">
-            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
-            Ecrã Completo
-          </a>
         </div>
-        <iframe id="simulator-frame" class="simulator-frame" src="https://dpsdubai.grupo-dps.com" title="Simulador de Investimento Dubai — DPS Imobiliário" loading="lazy" allow="clipboard-write"></iframe>
+        <div class="sim-body">
+          <div class="sim-grid">
+            <!-- COLUNA ESQUERDA -->
+            <div class="sim-col">
+              <div class="sim-field">
+                <label class="sim-label">Empreendimento</label>
+                <select class="sim-select" id="sim-emp" onchange="simUpdateUnits()">
+                  <option value="">— Seleccione o empreendimento —</option>
+                </select>
+              </div>
+              <div class="sim-field">
+                <label class="sim-label">Unidade</label>
+                <select class="sim-select" id="sim-unit" onchange="simUpdateUnitInfo()">
+                  <option value="">— Seleccione a unidade —</option>
+                </select>
+              </div>
+              <div class="sim-unit-info" id="sim-unit-info"></div>
+              <div class="sim-field">
+                <label class="sim-label">Plano de Pagamento</label>
+                <select class="sim-select" id="sim-plan" onchange="simUpdatePlanDesc()">
+                  <option value="1pct">Plano 1%/mês — 15% entrada + 1%/mês (85 meses)</option>
+                  <option value="7030">Plano 70/30 — 70% construção + 30% entrega</option>
+                  <option value="5050">Plano 50/50 — 50% construção + 50% entrega</option>
+                  <option value="4060">Plano 40/60 — 40% entrada + 60% pós-entrega</option>
+                </select>
+                <div class="sim-plan-desc" id="sim-plan-desc">Entrada de 15% + pagamentos mensais de 1% durante 85 meses. Ideal para maximizar o efeito de alavancagem.</div>
+              </div>
+            </div>
+            <!-- COLUNA DIREITA -->
+            <div class="sim-col">
+              <div class="sim-field">
+                <label class="sim-label">Valorização Anual Esperada</label>
+                <div class="sim-range-wrap">
+                  <input type="range" class="sim-range" id="sim-valorizacao" min="3" max="15" value="7" step="0.5" oninput="document.getElementById('sim-val-display').textContent=this.value+'%'">
+                  <span class="sim-range-val" id="sim-val-display">7%</span>
+                </div>
+              </div>
+              <div class="sim-field">
+                <label class="sim-label">Período de Investimento (anos)</label>
+                <div class="sim-range-wrap">
+                  <input type="range" class="sim-range" id="sim-anos" min="1" max="10" value="3" step="1" oninput="document.getElementById('sim-anos-display').textContent=this.value+' anos'">
+                  <span class="sim-range-val" id="sim-anos-display">3 anos</span>
+                </div>
+              </div>
+              <div class="sim-field">
+                <label class="sim-label">Yield de Arrendamento Anual</label>
+                <div class="sim-range-wrap">
+                  <input type="range" class="sim-range" id="sim-yield" min="4" max="12" value="7" step="0.5" oninput="document.getElementById('sim-yield-display').textContent=this.value+'%'">
+                  <span class="sim-range-val" id="sim-yield-display">7%</span>
+                </div>
+              </div>
+              <button class="sim-btn" onclick="simCalcular()">&#9654; Calcular Retorno</button>
+            </div>
+          </div>
+          <!-- RESULTADOS -->
+          <div class="sim-results" id="sim-results">
+            <div class="sim-results-title">Projeção de Retorno</div>
+            <div class="sim-results-grid">
+              <div class="sim-res-card"><div class="sim-res-label">Preço de Compra</div><div class="sim-res-value" id="res-compra">—</div></div>
+              <div class="sim-res-card"><div class="sim-res-label">Valor Estimado na Venda</div><div class="sim-res-value gold" id="res-venda">—</div></div>
+              <div class="sim-res-card"><div class="sim-res-label">Mais-Valia</div><div class="sim-res-value green" id="res-maisvalia">—</div></div>
+              <div class="sim-res-card"><div class="sim-res-label">Rendimento Arrendamento</div><div class="sim-res-value" id="res-rend">—</div></div>
+              <div class="sim-res-card"><div class="sim-res-label">Retorno Total</div><div class="sim-res-value green" id="res-total">—</div></div>
+              <div class="sim-res-card"><div class="sim-res-label">ROI Total</div><div class="sim-res-value gold" id="res-roi">—</div></div>
+            </div>
+            <div class="sim-plan-desc" id="res-plano-detalhe" style="margin-top:1rem;"></div>
+            <a class="sim-whatsapp" id="sim-wa-btn" href="#" target="_blank">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              Solicitar Informações via WhatsApp
+            </a>
+            <p class="sim-disclaimer">* Simulação meramente indicativa. Valores baseados em projeções históricas do mercado imobiliário de Dubai. Não constitui aconselhamento financeiro. Taxa de câmbio: 1 AED = 0,2312 EUR (fev. 2026).</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -704,5 +803,131 @@
     }
   </script>
   <script defer src="/share.js"></script>
+  <script>
+  // ===== SIMULADOR DUBAI =====
+  var SAMANA_DATA = null;
+
+  fetch('/samana_data.json')
+    .then(r => r.json())
+    .then(data => {
+      SAMANA_DATA = data;
+      var sel = document.getElementById('sim-emp');
+      data.forEach(function(emp, i) {
+        var opt = document.createElement('option');
+        opt.value = i;
+        opt.textContent = emp.nome + ' (' + emp.total_unidades + ' unidades)';
+        sel.appendChild(opt);
+      });
+    })
+    .catch(function(e) { console.error('Erro ao carregar dados:', e); });
+
+  function simUpdateUnits() {
+    var empIdx = document.getElementById('sim-emp').value;
+    var unitSel = document.getElementById('sim-unit');
+    unitSel.innerHTML = '<option value="">— Seleccione a unidade —</option>';
+    document.getElementById('sim-unit-info').classList.remove('visible');
+    document.getElementById('sim-results').classList.remove('visible');
+    if (!empIdx || !SAMANA_DATA) return;
+    var emp = SAMANA_DATA[parseInt(empIdx)];
+    emp.unidades.forEach(function(u, i) {
+      var opt = document.createElement('option');
+      opt.value = i;
+      opt.textContent = u.codigo + ' · ' + u.tipologia + ' · ' + u.piso + ' · ' + fmtEur(u.preco_desconto);
+      unitSel.appendChild(opt);
+    });
+  }
+
+  function simUpdateUnitInfo() {
+    var empIdx = document.getElementById('sim-emp').value;
+    var unitIdx = document.getElementById('sim-unit').value;
+    var info = document.getElementById('sim-unit-info');
+    document.getElementById('sim-results').classList.remove('visible');
+    if (!empIdx || unitIdx === '' || !SAMANA_DATA) { info.classList.remove('visible'); return; }
+    var u = SAMANA_DATA[parseInt(empIdx)].unidades[parseInt(unitIdx)];
+    info.innerHTML =
+      '<strong>' + u.tipologia + '</strong> &nbsp;|&nbsp; ' + u.piso +
+      ' &nbsp;|&nbsp; ' + u.area + ' m² &nbsp;|&nbsp; ' + u.quartos + ' quarto(s)' +
+      '<br>Vista: ' + u.vista + ' &nbsp;|&nbsp; Localização: ' + u.localizacao +
+      '<br>Preço com desconto: <strong>' + fmtEur(u.preco_desconto) + '</strong>' +
+      ' &nbsp;|&nbsp; Valor de reserva: <strong>' + fmtEur(u.reserva) + '</strong>';
+    info.classList.add('visible');
+  }
+
+  var planDescs = {
+    '1pct': 'Entrada de 15% + pagamentos mensais de 1% durante 85 meses. Ideal para maximizar o efeito de alavancagem com menor capital inicial.',
+    '7030': '70% do valor pago durante a construção (em tranches) + 30% na entrega das chaves.',
+    '5050': '50% do valor pago durante a construção + 50% na entrega. Equilíbrio entre alavancagem e exposição.',
+    '4060': '40% de entrada inicial + 60% pago após a entrega, em prestações. Menor esforço durante a construção.'
+  };
+
+  function simUpdatePlanDesc() {
+    var plan = document.getElementById('sim-plan').value;
+    document.getElementById('sim-plan-desc').textContent = planDescs[plan] || '';
+    document.getElementById('sim-results').classList.remove('visible');
+  }
+
+  function simCalcular() {
+    var empIdx = document.getElementById('sim-emp').value;
+    var unitIdx = document.getElementById('sim-unit').value;
+    if (!empIdx || unitIdx === '' || !SAMANA_DATA) {
+      alert('Por favor seleccione o empreendimento e a unidade.');
+      return;
+    }
+    var u = SAMANA_DATA[parseInt(empIdx)].unidades[parseInt(unitIdx)];
+    var empNome = SAMANA_DATA[parseInt(empIdx)].nome;
+    var preco = u.preco_desconto;
+    var plan = document.getElementById('sim-plan').value;
+    var valorizacao = parseFloat(document.getElementById('sim-valorizacao').value) / 100;
+    var anos = parseInt(document.getElementById('sim-anos').value);
+    var yieldAnual = parseFloat(document.getElementById('sim-yield').value) / 100;
+
+    // Valor na venda
+    var valorVenda = preco * Math.pow(1 + valorizacao, anos);
+    var maisValia = valorVenda - preco;
+
+    // Rendimento de arrendamento (sobre o preço de compra, pelo período)
+    var rendArrendamento = preco * yieldAnual * anos;
+
+    // Retorno total
+    var retornoTotal = maisValia + rendArrendamento;
+    var roi = (retornoTotal / preco) * 100;
+
+    // Detalhe do plano
+    var planoDetalhe = '';
+    if (plan === '1pct') {
+      var entrada = preco * 0.15;
+      var mensal = preco * 0.01;
+      planoDetalhe = 'Entrada: ' + fmtEur(entrada) + ' · Prestação mensal: ' + fmtEur(mensal) + ' · Total 85 meses: ' + fmtEur(mensal * 85);
+    } else if (plan === '7030') {
+      planoDetalhe = 'Durante construção: ' + fmtEur(preco * 0.70) + ' · Na entrega: ' + fmtEur(preco * 0.30);
+    } else if (plan === '5050') {
+      planoDetalhe = 'Durante construção: ' + fmtEur(preco * 0.50) + ' · Na entrega: ' + fmtEur(preco * 0.50);
+    } else if (plan === '4060') {
+      planoDetalhe = 'Entrada: ' + fmtEur(preco * 0.40) + ' · Pós-entrega: ' + fmtEur(preco * 0.60);
+    }
+
+    document.getElementById('res-compra').textContent = fmtEur(preco);
+    document.getElementById('res-venda').textContent = fmtEur(valorVenda);
+    document.getElementById('res-maisvalia').textContent = '+' + fmtEur(maisValia);
+    document.getElementById('res-rend').textContent = fmtEur(rendArrendamento);
+    document.getElementById('res-total').textContent = '+' + fmtEur(retornoTotal);
+    document.getElementById('res-roi').textContent = '+' + roi.toFixed(1) + '%';
+    document.getElementById('res-plano-detalhe').textContent = planoDetalhe;
+
+    // WhatsApp
+    var msg = 'Olá! Tenho interesse no empreendimento ' + empNome + ', unidade ' + u.codigo +
+      ' (' + u.tipologia + ', ' + u.piso + ', ' + fmtEur(preco) + '). ' +
+      'Plano: ' + document.getElementById('sim-plan').options[document.getElementById('sim-plan').selectedIndex].text + '. ' +
+      'Pode enviar mais informações?';
+    document.getElementById('sim-wa-btn').href = 'https://wa.me/351925708456?text=' + encodeURIComponent(msg);
+
+    document.getElementById('sim-results').classList.add('visible');
+    document.getElementById('sim-results').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  function fmtEur(v) {
+    return new Intl.NumberFormat('pt-PT', { style: 'currency', currency: 'EUR', maximumFractionDigits: 0 }).format(v);
+  }
+  </script>
 </body>
 </html>
