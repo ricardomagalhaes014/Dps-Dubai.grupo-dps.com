@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://dpsdubai.grupo-dps.com/sitemap.xml
